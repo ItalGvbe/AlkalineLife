@@ -1,0 +1,12 @@
+// Add interactivity to "Read More" buttons
+document.querySelectorAll('.read-more').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const post = e.target.closest('.blog-post');
+    const fullText = post.querySelector('.full-text');
+    if (fullText) {
+      fullText.classList.toggle('show');
+      e.target.textContent = fullText.classList.contains('show') ? 'Read Less' : 'Read More';
+    }
+  });
+});
